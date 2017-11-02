@@ -65,7 +65,25 @@
         <!--内容区域-->
         <div class="lt_content">
 
+            <button class="btn_add btn btn-default mb20">添加分类</button>
+            <table class="table table-bordered table-hover">
+
+                <thead>
+                <tr>
+                    <td width="20%">序号</td>
+                    <td width="80%">分类名称</td>
+                </tr>
+                </thead>
+                <tbody>
+                <!--挖个坑-->
+                </tbody>
+            </table>
+            <div class="text-right">
+                <ul id="paginator"></ul>
+            </div>
         </div>
+
+    </div>
 
     </div>
 </div>
@@ -88,13 +106,22 @@
         </div>
     </div>
 </div>
-
+<script type="text/html" id="tpl">
+    {{each rows v i}}
+    <tr>
+        <td>{{(page-1)* size + i+1}}</td>
+        <td>{{v.categoryName}}</td>
+    </tr>
+    {{/each}}
+</script>
 
 <script src="lib/jquery/jquery.js"></script>
 <script src="lib/bootstrap/js/bootstrap.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+<script src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
 <script src="js/common.js"></script>
-<script src="js/index.js"></script>
+<script src="js/first.js"></script>
 </body>
 </html>
